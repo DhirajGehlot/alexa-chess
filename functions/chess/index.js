@@ -1,4 +1,4 @@
-var chessjs = require('./chess.js')
+var chessjs = require('./chess')
 var _uciengine = require('uci')
 var uciengine = new _uciengine(process.env['LAMBDA_TASK_ROOT'] + '/stockfish')
 var fs = require("fs")
