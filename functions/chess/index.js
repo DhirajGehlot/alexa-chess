@@ -1,4 +1,4 @@
-var chessjs = require('./chess')
+var chessjs = require('./chess.js')
 var _uciengine = require('uci')
 var uciengine = new _uciengine(process.env['LAMBDA_TASK_ROOT'] + '/stockfish')
 var fs = require("fs")
@@ -12,7 +12,7 @@ var piece_map = {
   queen: "Q"
 }
 
-exports.handle = function(event, context) {
+exports.handler = function(event, context) {
   var chess = new chessjs.Chess();
 
   //event.session.sessionId
@@ -146,10 +146,10 @@ exports.handle = function(event, context) {
       } else if (intent === "AMAZON.StopIntent" || intent === "AMAZON.CancelIntent") {
         var endtime = Date.now()
         elapsed = (endtime - event.session.attributes.start) / 1000
-        minutes = Math.floor(elapsed / 60)
-        secs = Math.round(elapsed % 60)
+        var minutes = Math.floor(elapsed / 60)
+        var secs = Math.round(elapsed % 60)
 
-        message = "Ending game of chess. Playtime was " + minutes + " minutes " + secs + " seconds."
+        var message = "Ending game of chess. Playtime was " + minutes + " minutes " + secs + " seconds."
         response.response.outputSpeech = {
           type: "PlainText",
           text: message
