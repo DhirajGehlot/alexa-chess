@@ -1,33 +1,208 @@
 {
-  "intents": [
-    {
-      "intent": "ElapsedIntent"
-    },
-    {
-      "intent": "MoveIntent",
-      "slots": [
-        {
-          "name": "Piece",
-          "type": "CHESS_PIECE"
-        },
-        {
-          "name": "GridLetter",
-          "type": "GRID_LETTER"
-        },
-        {
-          "name": "GridNumber",
-          "type": "GRID_NUMBER"
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "square off",
+            "intents": [
+                {
+                    "name": "ElapsedIntent",
+                    "slots": [],
+                    "samples": [
+                        "ElapsedIntent how many seconds",
+                        "ElapsedIntent how many minutes",
+                        "ElapsedIntent how long",
+                        "ElapsedIntent how long has it been",
+                        "ElapsedIntent count",
+                        "ElapsedIntent what's the count",
+                        "ElapsedIntent how long as it been",
+                        "ElapsedIntent elapsed",
+                        "ElapsedIntent how much time has elapsed"
+                    ]
+                },
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": [
+                        "AMAZON.StopIntent stop the clock",
+                        "AMAZON.StopIntent checkmate",
+                        "AMAZON.StopIntent game over"
+                    ]
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "MoveIntent",
+                    "slots": [
+                        {
+                            "name": "Piece",
+                            "type": "CHESS_PIECE"
+                        },
+                        {
+                            "name": "GridLetter",
+                            "type": "GRID_LETTER"
+                        },
+                        {
+                            "name": "GridNumber",
+                            "type": "GRID_NUMBER"
+                        }
+                    ],
+                    "samples": [
+                        "MoveIntent {Piece} takes {GridLetter} {GridNumber}",
+                        "MoveIntent {Piece} to {GridLetter} {GridNumber}",
+                        "MoveIntent {Piece} {GridLetter} {GridNumber}",
+                        "MoveIntent move {Piece} to {GridLetter} {GridNumber}",
+                        "MoveIntent move {Piece} {GridLetter} {GridNumber}"
+                    ]
+                },
+                {
+                    "name": "AMAZON.NextIntent",
+                    "samples": [
+                        "AMAZON.NextIntent done",
+                        "AMAZON.NextIntent go",
+                        "AMAZON.NextIntent next",
+                        "AMAZON.NextIntent next player"
+                    ]
+                }
+            ],
+            "types": [
+                {
+                    "name": "CHESS_PIECE",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "Rook"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Pawn"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Queen"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Knight"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "King"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Bishop"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "GRID_LETTER",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "H"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "G"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "F"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "E"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "D"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "C"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "B"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "A"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "GRID_NUMBER",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "Eight"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Seven"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Six"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Five"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Four"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Three"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Two"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "One"
+                            }
+                        }
+                    ]
+                }
+            ]
         }
-      ]
-    },
-    {
-      "intent": "AMAZON.StopIntent"
-    },
-    {
-      "intent": "AMAZON.CancelIntent"
-    },
-    {
-      "intent": "AMAZON.NextIntent"
     }
-  ]
-} 
+}
